@@ -1,7 +1,7 @@
 import { beforeEach, describe, expect, it } from "vitest";
-import { addVehicle, as, createStation, createUser, useDb, type Db } from "./harness";
+import { addVehicle, as, createStation, createUser, setupDb, type Db } from "./harness";
 
-const ref = useDb();
+const ref = setupDb();
 let db: Db;
 beforeEach(() => {
   db = ref.db;

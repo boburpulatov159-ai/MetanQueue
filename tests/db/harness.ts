@@ -34,7 +34,7 @@ export type Db = Awaited<ReturnType<typeof createDb>>;
  * One database per test file (PGlite boots in ~30s on slow machines);
  * every test runs inside a transaction that is rolled back, so tests stay isolated.
  */
-export function useDb() {
+export function setupDb() {
   const ref = {} as { db: Db };
   beforeAll(async () => {
     ref.db = await createDb();
